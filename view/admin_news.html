@@ -1,0 +1,40 @@
+<?php include ('./view/admin_header.html'); ?>
+<h1>News</h1>
+<table class="table table-centered mb-0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Dsc</th>
+        <th>Content</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <?php foreach($rows as $k => $v){?>
+    <tr data-id="<?php echo $v['id']?>">
+        <td><?php echo $v['id']?></td>
+        <td><input  data-type='title' class="form-control" type="text" value="<?php echo $v['title']?>"></td>
+        <td><input data-type='dsc' class="form-control" type="text" value="<?php echo $v['dsc']?>"></td>
+        <td><input data-type='content' class="form-control" type="text" value="<?php echo $v['content']?>"></td>
+        <td><button class="btn btn-link btn-rounded remove" type="button">删除</button></td>
+    </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary btn-rounded" id="add">新建</button>
+<div class="spinner" id="spinner" style="display: none">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<?php include ('./view/admin_footer.html'); ?>
+<!--<ul>-->
+    <!--<?php foreach ($rows as $k => $v) { ?>-->
+    <!--<li>-->
+        <!--<?php echo $v['title']?>-->
+    <!--</li>-->
+    <!--<?php } ?>-->
+<!--</ul>-->
